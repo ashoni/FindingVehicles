@@ -47,7 +47,7 @@ Here is a link to the final video:
 
 https://github.com/ashoni/FindingVehicles/blob/master/project_video_result_save.mp4
 
-As it was said below, the pipelane looked for windows of three different sizes in particular areas of the image and then used heat map to get rid of false positives (if any) and combine overlapping boxes into one. I tried both calculating HOG features for each window in real time and precalculating it (see Int[48] in code). Second way makes the video processing faster but gives more false positives and results in a lower quality in general.
+As it was said below, the pipelane looked for windows of three different sizes in particular areas of the image and then used heat map to get rid of false positives (if any) and combine overlapping boxes into one. I tried both calculating HOG features for each window in real time and precalculating it (see In[48] in code). Second way makes the video processing faster but gives more false positives and results in a lower quality in general.
 
 ### Discussion
 
