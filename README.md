@@ -13,7 +13,7 @@ Test Accuracy of SVC =  0.9825
 Here is an illustration of HOG signature:
 
 <p align="center">
-    <img src="explain2.png" width="320" alt="simulator" />
+    <img src="explain2.png" width="500" alt="simulator" />
 </p>
 
 In my code you can find (sorry for the mess):
@@ -39,7 +39,7 @@ Horizontal overlap is larger than vertical since in general car width is larger 
 After the positively classified windows are extracted I use heatmap with threshold equals to 2. The example of this pipeline result is shown below:
 
 <p align="center">
-    <img src="explain7.png" width="320" alt="simulator" />
+    <img src="explain7.png" width="500" alt="simulator" />
 </p>
 
 In the code, the pipeline can be found here:.
