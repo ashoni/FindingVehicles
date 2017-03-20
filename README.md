@@ -16,12 +16,7 @@ Here is an illustration of HOG signature:
     <img src="explain2.png" width="500" alt="simulator" />
 </p>
 
-In my code you can find (sorry for the mess):
-
-In[25]: method get_hog_features and illustrations of HOG signature
-
-In[9]: SVM training
-
+In my code you can find (sorry for the mess) method get_hog_features and illustrations of HOG signature in In[90], SVM training in In[14].
 I didn't use the colour features because they allowed to make the SVM accuracy not significantly higher but in the very end it resulted into more false positives. I guess that despite splitting the set into training and validation it still caused some overfitting.
 
 ### Sliding Window Search
@@ -42,7 +37,7 @@ After the positively classified windows are extracted I use heatmap with thresho
     <img src="explain7.png" width="500" alt="simulator" />
 </p>
 
-In the code, the pipeline can be found here:.
+In the code, the pipeline can be found in In[30].
 
 Since the windows search are has strict limitations, it gives almost 0 false positives.
 
@@ -52,7 +47,7 @@ Here is a link to the final video:
 
 https://github.com/ashoni/FindingVehicles/blob/master/project_video_result_save.mp4
 
-As it was said below, the pipelane looked for windows of three different sizes in particular areas of the image and then used heat map to get rid of false positives (if any) and combine overlapping boxes into one. I tried both calculating HOG features for each window in real time and precalculating it (see ... in code). Second way makes the video processing faster but gives more false positives and results in a lower quality in general.
+As it was said below, the pipelane looked for windows of three different sizes in particular areas of the image and then used heat map to get rid of false positives (if any) and combine overlapping boxes into one. I tried both calculating HOG features for each window in real time and precalculating it (see Int[48] in code). Second way makes the video processing faster but gives more false positives and results in a lower quality in general.
 
 ### Discussion
 
