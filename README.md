@@ -39,7 +39,7 @@ After the positively classified windows are extracted I use heatmap with thresho
 
 In the code, the pipeline can be found in In[30].
 
-Since the windows search are has strict limitations, it gives almost 0 false positives.
+Since the windows search has strict limitations, it gives almost 0 false positives.
 
 ### Video Implementation
 
