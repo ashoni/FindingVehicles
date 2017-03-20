@@ -23,11 +23,11 @@ I didn't use the colour features because they allowed to make the SVM accuracy n
 
 For sliding search I used windows 3 types of window sizes, each had its own area of search and overlapping.
 
-Large window: 144 * 144, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [width * 0.55 : width * 0.9]
+Large window: 144 * 144, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [height * 0.55 : height * 0.9]
 
-Medium window: 130 * 130, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [width * 0.55 : width * 0.8]
+Medium window: 130 * 130, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [height * 0.55 : height * 0.8]
 
-Small window: 96 * 96, overap = (0.8, 0.7), x_range = [width * 0.4 : width * 0.85], y_range = [width * 0.55 : width * 0.8]
+Small window: 96 * 96, overap = (0.8, 0.7), x_range = [width * 0.4 : width * 0.85], y_range = [height * 0.55 : height * 0.8]
 
 Horizontal overlap is larger than vertical since in general car width is larger than its height. So it allowed me to better cover the car object. Smaller windows have smaller ranges and are closer to horizon (due to perspective). Also, since in this video we stay in the leftmost lane, I search for cars in the right half of the image. It gives better results and I assume that it's possible to generalize since it should be possible for the car to detect on which lane it is.
 
