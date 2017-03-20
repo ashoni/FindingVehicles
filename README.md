@@ -27,8 +27,11 @@ I didn't use the colour features because they allowed to make the SVM accuracy n
 ### Sliding Window Search
 
 For sliding search I used windows 3 types of window sizes, each had its own area of search and overlapping.
+
 Large window: 144 * 144, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [width * 0.55 : width * 0.9]
+
 Medium window: 130 * 130, overap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [width * 0.55 : width * 0.8]
+
 Small window: 96 * 96, overap = (0.8, 0.7), x_range = [width * 0.4 : width * 0.85], y_range = [width * 0.55 : width * 0.8]
 
 Horizontal overlap is larger than vertical since in general car width is larger than its height. So it allowed me to better cover the car object. Smaller windows have smaller ranges and are closer to horizon (due to perspective). Also, since in this video we stay in the leftmost lane, I search for cars in the right half of the image. It gives better results and I assume that it's possible to generalize since it should be possible for the car to detect on which lane it is.
@@ -46,6 +49,7 @@ Since the windows search are has strict limitations, it gives almost 0 false pos
 ### Video Implementation
 
 Here is a link to the final video:
+https://github.com/ashoni/FindingVehicles/blob/master/project_video_result_save.mp4
 
 As it was said below, the pipelane looked for windows of three different sizes in particular areas of the image and then used heat map to get rid of false positives (if any) and combine overlapping boxes into one. I tried both calculating HOG features for each window in real time and precalculating it (see ... in code). Second way makes the video processing faster but gives more false positives and results in a lower quality in general.
 
