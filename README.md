@@ -39,7 +39,7 @@ Horizontal overlap is larger than vertical since in general car width is larger 
 After the positively classified windows are extracted I use heatmap with threshold equals to 2. The example of this pipeline result is shown below:
 
 <p align="center">
-    <img src="explain3.png" width="320" alt="simulator" />
+    <img src="explain7.png" width="320" alt="simulator" />
 </p>
 
 In the code, the pipeline can be found here:.
