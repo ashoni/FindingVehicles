@@ -28,13 +28,15 @@ I didn't use the colour features because they allowed to make the SVM accuracy n
 
 ### Sliding Window Search
 
-For sliding search I used windows 3 types of window sizes, each had its own area of search and overlapping.
+For sliding search I used windows 4 types of window sizes, each had its own area of search and overlapping.
 
 Large window: 144 * 144, overlap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [height * 0.55 : height * 0.9]
 
 Medium window: 130 * 130, overlap = (0.9, 0.8), x_range = [width * 0.4 : width], y_range = [height * 0.55 : height * 0.8]
 
-Small window: 96 * 96, overlap = (0.8, 0.7), x_range = [width * 0.4 : width * 0.85], y_range = [height * 0.55 : height * 0.8]
+Small window: 96 * 96, overlap = (0.8, 0.75), x_range = [width * 0.4 : width * 0.85], y_range = [height * 0.55 : height * 0.8]
+
+X-Small window: 64 * 64, overlap = (0.8, 0.75), x_range = [width * 0.4 : width * 0.85], y_range = [height * 0.55 : height * 0.77]
 
 Horizontal overlap is larger than vertical since in general car width is larger than its height. So it allowed me to better cover the car object. Smaller windows have smaller ranges and are closer to horizon (due to perspective). Also, since in this video we stay in the leftmost lane, I search for cars in the right half of the image. It gives better results and I assume that it's possible to generalize since it should be possible for the car to detect on which lane it is.
 
@@ -44,7 +46,7 @@ After the positively classified windows are extracted I use heatmap with thresho
     <img src="explain7.png" width="500" alt="simulator" />
 </p>
 
-In the code, the pipeline can be found in In[30].
+In the code, the pipeline can be found in In[35].
 
 Since the windows search has strict limitations, it gives almost 0 false positives.
 
