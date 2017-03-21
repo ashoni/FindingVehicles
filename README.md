@@ -4,7 +4,7 @@
 
 Playing with orientations, pixels_per_cell and cells_per_block didn't give my any significant result. However, changing colourspace and number of channels was more effective, it allowed increasing SVM accuracy on ~2-3%. 
 
-Chosen parameters: 9 orientations, 8px per cell, 2 cells per block, YUV. I also tried using less orientations. There was almost no difference visually between 7, 8 and 9 but SVM performed better with 9. As for colour space, YCrBr had very similar results, the diference was less than 1%. I think, that's because of their shared component, Y -- brightness. In the end of all, the exact colour doesn't matter -- there are cars of all colors, so we should pay more attention on more general characteristics. 
+Chosen parameters: 9 orientations, 8px per cell, 2 cells per block, YUV. I also tried using less orientations. There was almost no difference visually between 7, 8 and 9 but SVM performed better with 9. As for colour space, YCrCb had very similar results, the diference was less than 1%. I think, that's because of their shared component, Y -- brightness. In the end of all, the exact colour doesn't matter -- there are cars of all colors, so we should pay more attention on more general characteristics. 
 
 The interesting thing is that despite that there always was one channel for each colour space which showed much better results than 2 others, using "ALL" was still better than using it alone. My best result for classificator (I used Linear SVM) was giving following results:
 
