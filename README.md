@@ -60,12 +60,8 @@ As it was said below, the pipelane looked for windows of four different sizes in
 
 ### Discussion
 
-Though I like the generated video, here are 2 thoughts:
-
-1. It can be improved by smart calculating of the weighted average using last n frames results.
-
-2. It's very unstable. First I did all the work for the images from the lesson. I achieved pretty good results (see the picture below) but when I ran it on the video it detected cars with much poorer quality. I had to change the window selection parameters in order to get the quality back. So I think it needs a proper camera calibration and some method to detect its position on the road first. This would allow to choose search area parameters which suit this exact landscape.
+The current method is very unstable. First I did all the work for the images from the lesson. I achieved pretty good results (see the picture below) but when I ran it on the video it detected cars with much poorer quality. I had to change the window selection parameters in order to get the quality back. So I think it needs a proper camera calibration and some method to detect its position on the road first. This would allow to choose search area parameters which suit this exact landscape.
 
 <p align="center">
-    <img src="explain6.png" width="320" alt="simulator" />
+    <img src="explain6.png" width="500" alt="simulator" />
 </p>
