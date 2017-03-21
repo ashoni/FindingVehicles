@@ -2,7 +2,11 @@
 
 ### HOG parameters
 
-Playing with orientations, pixels_per_cell and cells_per_block didn't give my any significant result. However, changing colourspace and number of channels was more effective, it allowed increasing SVM accuracy on ~2-3%. The interesting thing is that despite that there always was one channel for each colour space which showed much better results than 2 others, using "ALL" was still better than using it alone. My best result for classificator (I used Linear SVM) was giving following results:
+Playing with orientations, pixels_per_cell and cells_per_block didn't give my any significant result. However, changing colourspace and number of channels was more effective, it allowed increasing SVM accuracy on ~2-3%. 
+
+Chosen parameters: 9 orientations, 8px per cell, 2 cells per block, YUV. I also tried using less orientations. There was almost no difference visually between 7, 8 and 9 but for SVM performed better with 9. As for colour space, YCrBr had very similar results, the diference was less than 1%. I thinks, that's because of their shared component, Y -- brightness. In the end of all, the exact colour doesn't matter -- there are cars of all colors, so we pay more attention on more general characteristics. 
+
+The interesting thing is that despite that there always was one channel for each colour space which showed much better results than 2 others, using "ALL" was still better than using it alone. My best result for classificator (I used Linear SVM) was giving following results:
 
 Feature vector length: 5292
 
@@ -13,10 +17,13 @@ Test Accuracy of SVC =  0.9825
 Here is an illustration of HOG signature:
 
 <p align="center">
-    <img src="explain2.png" width="500" alt="simulator" />
+    <img src="orientcar.png" width="700" alt="simulator" />
+</p>
+<p align="center">
+    <img src="orientnotcar.png" width="700" alt="simulator" />
 </p>
 
-In my code you can find (sorry for the mess) method get_hog_features and illustrations of HOG signature in In[90], SVM training in In[14].
+In my code you can find (sorry for the mess) method get_hog_features and illustrations of HOG signature in In[46], SVM training in In[25].
 I didn't use the colour features because they allowed to make the SVM accuracy not significantly higher but in the very end it resulted into more false positives. I guess that despite splitting the set into training and validation it still caused some overfitting.
 
 ### Sliding Window Search
